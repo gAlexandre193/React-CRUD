@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 
 * {
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
@@ -16,13 +17,4 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
-
-.wrapper .appContainer {
-  background-color: #f2f5f9;
-  color: #444;
-  border-radius: 12px;
-  padding: 12px;
-  height: 405px;
-  width: 805px;
 }

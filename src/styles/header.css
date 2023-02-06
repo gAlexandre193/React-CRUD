@@ -1,0 +1,12 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  height: 40px;
+}
+
+.headerContainer .titleText {
+  font-size: 26px;
+  font-weight: 500;
+}
