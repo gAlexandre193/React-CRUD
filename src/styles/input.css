@@ -1,0 +1,22 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+
+.inputContainer .labelInput {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.inputContainer .input {
+  border: 3px solid #84DCC6;
+  border-radius: 12px;
+  outline: none;
+  padding: 0 8px;
+  height: 45px;
+}
+
+.inputContainer .input:focus { border-color: #74c2ae; }
