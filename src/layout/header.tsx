@@ -1,7 +1,9 @@
-import { IconPlus } from "../icons";
-import "../styles/header.css";
+import React from "react";
+import { HeaderT } from "../assets/types/layout";
+import { IconPlus } from "../assets/icons";
+import "../assets/styles/header.css";
 
-function Header({ title, modApp, changeModApp }) {
+function Header({ title, modApp, changeModApp }: HeaderT) {
   return (
     <header className="headerContainer">
       <h2 className="titleText"> {title} </h2>

@@ -1,7 +1,13 @@
+import React from "react";
+import { HeaderT } from '../assets/types/layout';
 import Header from "./header";
-import "../styles/layout.css";
+import "../assets/styles/layout.css";
 
-function Layout({ title, modApp, changeModApp, children }) {
+interface LayoutI extends HeaderT {
+  children: any;
+}
+
+function Layout({ title, modApp, changeModApp, children }: LayoutI) {
   return (
     <div className="wrapper">
       <div className="appContainer">

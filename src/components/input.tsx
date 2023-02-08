@@ -1,5 +1,5 @@
 import React, { HTMLInputTypeAttribute } from "react";
-import "../styles/input.css";
+import "../assets/styles/input.css";
 
 type InputT = {
   label: string;

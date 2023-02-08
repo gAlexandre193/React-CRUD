@@ -1,4 +1,15 @@
-export const IconPlus = ({ color, isPointer, size, mr, ml, action }) => (
+import React from "react";
+
+type IconT = {
+  color?: string;
+  isPointer?: boolean;
+  size?: number;
+  ml?: string;
+  mr?: string;
+  action?: () => void;
+}
+
+export const IconPlus = ({ color, isPointer, size, mr, ml, action }: IconT) => (
   <svg 
     style={{ 
       color: color,
@@ -14,7 +25,7 @@ export const IconPlus = ({ color, isPointer, size, mr, ml, action }) => (
   </svg>
 );
 
-export const IconEdit = ({ color, isPointer, size, mr, ml, action }) => (
+export const IconEdit = ({ color, isPointer, size, mr, ml, action }: IconT) => (
   <svg 
     style={{ 
       color: color,
@@ -30,7 +41,7 @@ export const IconEdit = ({ color, isPointer, size, mr, ml, action }) => (
   </svg>
 );
 
-export const IconTrash = ({ color, isPointer, size, mr, ml, action }) => (
+export const IconTrash = ({ color, isPointer, size, mr, ml, action }: IconT) => (
   <svg 
     style={{ 
       color: color,

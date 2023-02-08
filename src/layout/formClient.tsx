@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Input from "../components/input.tsx";
-import "../styles/formClient.css";
+import Input from "../components/input";
+import "../assets/styles/formClient.css";
 
-function FormClient({ changeModApp }) {
+function FormClient({ changeModApp }: { changeModApp: any }) {
   const [inputName, setInputName] = useState("");
   const [inputAge, setInputAge] = useState("0");
 

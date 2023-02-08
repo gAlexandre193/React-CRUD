@@ -1,11 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-
-type ClientT = {
-  id: string;
-  name: string;
-  age: number;
-  actions?: [];
-};
+import { ClientT } from "../assets/types/client";
 
 type ClientsContextT = {
   clientList: ClientT[];
@@ -19,7 +13,7 @@ const ClientsContext = createContext<ClientsContextT>(DEFAULT_VALUE);
 
 export const useClients = () => useContext(ClientsContext);
 
-function ClientsProvider({ children }) {
+function ClientsProvider({ children }: { children: React.ReactElement }) {
   const [clientList, setClientList] = useState<ClientT[]>([
     { id: "ID&name='Alex'", name: 'Alex', age: 18, actions: [] },
     { id: "ID&name='Lucas'", name: 'Lucas', age: 10, actions: [] },

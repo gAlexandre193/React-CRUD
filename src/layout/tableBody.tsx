@@ -1,6 +1,8 @@
-import { IconEdit, IconTrash } from "../icons";
+import React from "react";
+import { ClientT } from "../assets/types/client";
+import { IconEdit, IconTrash } from "../assets/icons";
 
-function TableBody({ tableData }) {
+function TableBody({ tableData }: { tableData: ClientT }) {
   return (
     <div className="tBodyRowContainer">
       <h5 className="tBodyItem"> {tableData.id} </h5>

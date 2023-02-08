@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useClients } from "./context/clients.tsx";
+import { useClients } from "./context/clients";
 import Layout from "./layout";
 import Table from "./layout/table";
-import FormClient from "./layout/formClient.tsx";
+import FormClient from "./layout/formClient";
 
 function App() {
   const [modApp, setModApp] = useState<"dataRead" | "dataAdd">("dataRead");
