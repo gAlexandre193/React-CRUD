@@ -1,16 +1,13 @@
-import React, { useState } from "react";
-import { useClients } from "./context/clients";
+import React from "react";
+import { useModApp } from "./assets/hooks/modApp";
+import { useClients } from "./assets/hooks/clients";
 import Layout from "./layout";
 import Table from "./layout/table";
 import FormClient from "./layout/formClient";
 
 function App() {
-  const [modApp, setModApp] = useState<"dataRead" | "dataAdd">("dataRead");
-  const { clientList } = useClients();
-
-  // Actions
-  const handlerToDataAddMod = () => setModApp("dataAdd");
-  const handlerToDataReadMod = () => setModApp("dataRead");
+  const { modApp } = useModApp();
+  const { clientList, updateData } = useClients();
 
   return (
     <Layout 
@@ -18,12 +15,10 @@ function App() {
         ${modApp !== "dataRead" ? "Cadastro de" : ''} 
         Clientes
       `} 
-      modApp={modApp}
-      changeModApp={handlerToDataAddMod}
     >
       {modApp === 'dataRead' 
         ? <Table tableData={clientList} />
-        : <FormClient changeModApp={handlerToDataReadMod} />}
+        : <FormClient formData={updateData ? updateData : { id: "", name: "", age: 0 }} />}
     </Layout>
   );
 }

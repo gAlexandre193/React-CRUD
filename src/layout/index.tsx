@@ -7,11 +7,11 @@ interface LayoutI extends HeaderT {
   children: any;
 }
 
-function Layout({ title, modApp, changeModApp, children }: LayoutI) {
+function Layout({ title, children }: LayoutI) {
   return (
     <div className="wrapper">
       <div className="appContainer">
-        <Header title={title} modApp={modApp} changeModApp={changeModApp} />
+        <Header title={title} />
         
         <section className="sectionContainer">
           <div className="sectionScrollContainer">

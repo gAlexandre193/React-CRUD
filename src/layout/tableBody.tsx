@@ -1,8 +1,11 @@
 import React from "react";
 import { ClientT } from "../assets/types/client";
+import { useClients } from "../assets/hooks/clients";
 import { IconEdit, IconTrash } from "../assets/icons";
 
 function TableBody({ tableData }: { tableData: ClientT }) {
+  const { handlerDeleteClient, handlerAddUpdateDate } = useClients();
+
   return (
     <div className="tBodyRowContainer">
       <h5 className="tBodyItem"> {tableData.id} </h5>
@@ -14,14 +17,14 @@ function TableBody({ tableData }: { tableData: ClientT }) {
           color="#84FAC1" 
           size={20} 
           mr="12px" 
-          action={() => alert("Edit Clicker")} 
+          action={() => handlerAddUpdateDate(tableData)} 
         />
 
         <IconTrash 
           isPointer 
           color="#ED6A5A" 
           size={20} 
-          action={() => alert("Trash Clicker")} 
+          action={() => handlerDeleteClient(tableData.id)} 
         />
       </div>
     </div>
