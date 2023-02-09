@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import { ClientT } from "../assets/types/client";
 import { useModApp } from "../assets/hooks/modApp";
 
@@ -25,10 +25,15 @@ const DEFAULT_VALUE = {
 export const ClientsContext = createContext<ClientsContextT>(DEFAULT_VALUE);
 
 function ClientsProvider({ children }: { children: React.ReactElement }) {
-  const [clientList, setClientList] = useState<ClientT[]>([
-    { id: "ID&name='Alex'", name: 'Alex', age: 18, actions: [] },
-    { id: "ID&name='Lucas'", name: 'Lucas', age: 10, actions: [] },
-  ]);
+  const [clientList, setClientList] = useState<ClientT[]>(() => {
+    const getClient = localStorage.getItem("@client-list");
+
+    if(getClient) {
+      return JSON.parse(getClient);
+    };
+
+    return [];
+  });
   const [updateData, setUpdateDate] = useState<ClientT | null>(null);
   const { handlerChangerToDataAdd } = useModApp();
 
@@ -45,7 +50,7 @@ function ClientsProvider({ children }: { children: React.ReactElement }) {
   };
   const handlerDeleteClient = (idClient: string) => {
     const filterTask = clientList.filter((item) => item.id !== idClient);
-
+    
     setClientList(filterTask);
   };
   const handlerAddUpdateDate = (dataClient: ClientT) => {
@@ -54,6 +59,12 @@ function ClientsProvider({ children }: { children: React.ReactElement }) {
     handlerChangerToDataAdd();
   }; 
   const handlerClearUpdateDate = () => setUpdateDate(null);
+
+  useEffect(() => {
+    clientList.length > 0
+      ? localStorage.setItem("@client-list", JSON.stringify(clientList))
+      : localStorage.removeItem("@client-list");
+  }, [clientList]);
 
   const VALUE = { 
     clientList,
