@@ -1,19 +1,15 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import ModAppProvider from "./context/modApp";
-import ClientsProvider from "./context/clients";
-import App from "./App";
-// Style
-import "./assets/styles/global.css";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import ClientProvider from './context/clientContext';
+import App from './App';
+import './index.css';
 
-const root = createRoot(document.getElementById("root") as HTMLDivElement);
+const root = createRoot(document.getElementById('root') as HTMLDivElement);
 
 root.render(
   <React.StrictMode>
-    <ModAppProvider>
-      <ClientsProvider>
-        <App />
-      </ClientsProvider>
-    </ModAppProvider>
+    <ClientProvider>
+      <App />
+    </ClientProvider>
   </React.StrictMode>
 );

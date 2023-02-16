@@ -1,0 +1,38 @@
+.tableContainer {
+  background-color: rgba(142, 175, 231, .4);
+  border-radius: 12px;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.tableContainer > div { padding: 0 12px; }
+
+.tableContainer .tHeaderContainer {
+  background-color: #8EAFE7;
+  border-radius: 12px;
+  height: 40px;
+}
+
+.tHeaderContainer .hItemText { 
+  font-size: 1rem; 
+  font-weight: 600;
+}
+
+.tHeaderContainer .hItemText,
+.tBodyRowContainer .bItemText { flex: 1; }
+
+.tableContainer .tBodyRowContainer { height: 40px; }
+
+.tBodyRowContainer .bItemText {
+  font-size: .85rem;
+  font-weight: 400;
+}
+
+.tBodyRowContainer .bItemActionContainer { flex: 1; }
+.bItemActionContainer > .iconContainer:first-child { margin-right: 8px; }
+
+.tHeaderContainer + .warningText {
+  font-size: .95rem;
+  font-weight: 500;
+  height: 40px;
+}

@@ -1,0 +1,32 @@
+/* Header - appContainer */
+.headerContainer { padding: 0 12px; }
+.headerContainer .titleText {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.headerContainer > .iconContainer {
+  height: 28px;
+  width: 28px;
+}
+
+/* Section - appContainer */
+.sectionContainer {
+  padding: 12px;
+  padding-right: 6px;
+  padding-bottom: 0;
+  height: calc(100% - 38px);
+}
+
+.sectionContainer .scrollContainer {
+  overflow-y: auto;
+  border-radius: 12px;
+  padding-right: 6px;
+  height: 100%;
+}
+
+.sectionContainer .scrollContainer::-webkit-scrollbar { width: 7px; }
+.sectionContainer .scrollContainer::-webkit-scrollbar-thumb { background-color: transparent; }
+.sectionContainer .scrollContainer::-webkit-scrollbar-thumb { 
+  background-color: #444; 
+  border-radius: 8px;
+}
